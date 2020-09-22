@@ -114,7 +114,7 @@ const App = () => {
     <tr>
         <td >
       <Donut data = {processedData.donutISN}></Donut>
-      </td><td>
+      </td><td>-----------------------------------</td><td>
       <Donut data = {processedData.donutNPS}></Donut>
       </td>
     </tr>

@@ -27,7 +27,7 @@ class DoughnutChartComponent extends Component {
           rotation: 1 * Math.PI, //DEFAULT: -0.5 * Math.PI
           circumference: Math.PI, //2 * Math.PI es el maximo.
         }}
-        height = '100%'
+        height = '200%'
         />
         <br/>
       </div>

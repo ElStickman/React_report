@@ -101,22 +101,6 @@ const App = () => {
           data.id === "939"
         )
 
-      }).map((processedData) => {
-
-        return (<>
-          <SummaryHeader data={processedData.header}></SummaryHeader><tr>
-            <td >
-              <Donut data={processedData.donutISN}></Donut>
-            </td>
-            <td>
-              <Donut data={processedData.donutNPS}></Donut>
-            </td>
-          </tr>
-          <Table data={processedData.table}></Table>
-          <p>pencil</p>
-        </>)
-
-
   }).map((processedData)=>{
     
     return (<>

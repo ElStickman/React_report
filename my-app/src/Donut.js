@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Doughnut } from 'react-chartjs-2';
+import React, {Component} from 'react';
+import './CSS/App.css';
+import {Doughnut} from 'react-chartjs-2';
 
 class DoughnutChartComponent extends Component {
   constructor(props) {
@@ -16,21 +16,24 @@ class DoughnutChartComponent extends Component {
 
   render() {
     return (
-      <div>
-        <center><h1> {this.props.data.titulo} </h1></center>
-        <Doughnut data={{
+      
+
+        <center><h1> {this.props.data.titulo} </h1>
+        <Doughnut data = {{
           labels: this.state.labels,
           datasets: this.state.datasets,
         }}
-          options={{
-            cutoutPercentage: 50,
-            rotation: 1 * Math.PI, //DEFAULT: -0.5 * Math.PI
-            circumference: Math.PI, //2 * Math.PI es el maximo.
-          }}
-          height='100%'
-        />
-        <br />
-      </div>
+        options = {{
+          cutoutPercentage: 50,
+          rotation: 1 * Math.PI, //DEFAULT: -0.5 * Math.PI
+          circumference: Math.PI, //2 * Math.PI es el maximo.
+          maintainAspectRatio: true,
+          animation:{ duration: 3000},
+        }} 
+        width={950}
+
+        /></center>
+      
     )
   }
 }

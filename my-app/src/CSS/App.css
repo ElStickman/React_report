@@ -44,11 +44,13 @@ table {
   color:white
 }
 
-#summary td, th {
-  border: 1px solid #4e9bff;
+#summary td,#summary th {
+  border: 1px solid #000000;
   text-align: center;
   padding: 8px;
 }
 #summary tr {
   background-color: #4e9bff;
 }
+
+

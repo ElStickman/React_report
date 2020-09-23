@@ -27,7 +27,7 @@ class DoughnutChartComponent extends Component {
           cutoutPercentage: 50,
           rotation: 1 * Math.PI, //DEFAULT: -0.5 * Math.PI
           circumference: Math.PI, //2 * Math.PI es el maximo.
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
           
           
 

@@ -53,4 +53,7 @@ table {
   background-color: #4e9bff;
 }
 
-
+#donutid {
+  width:400px;
+  display:inline-block;
+}

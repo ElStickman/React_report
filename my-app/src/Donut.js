@@ -16,8 +16,6 @@ class DoughnutChartComponent extends Component {
 
   render() {
     return (
-      
-
         <center><h1> {this.props.data.titulo} </h1>
         <Doughnut data = {{
           labels: this.state.labels,
@@ -29,11 +27,10 @@ class DoughnutChartComponent extends Component {
           circumference: Math.PI, //2 * Math.PI es el maximo.
           maintainAspectRatio: true,
           animation:{ duration: 3000},
+          display: false
         }} 
-        width={950}
-
+        height = '150%'
         /></center>
-      
     )
   }
 }

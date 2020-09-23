@@ -108,11 +108,12 @@ const App = () => {
     <table id='summary'>
 
     <tr>
-      <td>
-        <Donut data = {processedData.donutISN}></Donut>
-      </td><td>
-        <Donut data = {processedData.donutNPS}></Donut>
-      </td>
+    <div id="donutid">
+      <Donut data = {processedData.donutISN}></Donut>
+    </div>
+    <div id="donutid">
+      <Donut data = {processedData.donutNPS}></Donut>
+    </div>
       
     </tr>
 

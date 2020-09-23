@@ -116,7 +116,7 @@ const App = () => {
           <p>pencil</p>
         </>)
 
-<<<<<<< HEAD
+
   }).map((processedData)=>{
     
     return (<>
@@ -133,9 +133,7 @@ const App = () => {
     </>)
     
     })}
-=======
-      })}
->>>>>>> 9fafd4a946dcbac3964b2de5079ed4e355aad21f
+
     </div>
   );
 }

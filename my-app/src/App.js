@@ -106,14 +106,16 @@ const App = () => {
     return (<>
     <SummaryHeader data = {processedData.header}></SummaryHeader>
     <table id='summary'>
+
     <tr>
-        <td>
-      <Donut data = {processedData.donutISN}></Donut>
+      <td>
+        <Donut data = {processedData.donutISN}></Donut>
       </td><td>
-      <Donut data = {processedData.donutNPS}></Donut>
+        <Donut data = {processedData.donutNPS}></Donut>
       </td>
       
     </tr>
+
     </table>
     <Table data = {processedData.table}></Table>
     <p>pencil</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../CSS/App.css'
+import '../Css/App.css'
 
 
 function Table({ data }) {

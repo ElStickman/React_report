@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../CSS/App.css';
+import '../Css/App.css';
 import {Doughnut} from 'react-chartjs-2';
 
 class DoughnutChartComponent extends Component {

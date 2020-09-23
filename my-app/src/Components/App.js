@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../Css/App.css';
+import '../CSS/App.css';
 import Donut from './Donut.js';
 import SummaryHeader from './SummaryHeader.js';
 import Table from './Table.js'

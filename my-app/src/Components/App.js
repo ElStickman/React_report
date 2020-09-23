@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './CSS/App.css';
+import '../Css/App.css';
 import Donut from './Donut.js';
 import SummaryHeader from './SummaryHeader.js';
 import Table from './Table.js'
 
-var dataJson = require('./data/2020-09-11_2020-09-11_ESP.json');
+var dataJson = require('../data/2020-09-11_2020-09-11_ESP.json');
 //939
 const App = () => {
   const [processedJsonData, setData] = useState(null)

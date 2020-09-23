@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import './CSS/App.css';
 import Donut from './Donut.js';
 import SummaryHeader from './SummaryHeader.js';
 import Table from './Table.js'
 
-var dataJson = require('./2020-09-11_2020-09-11_ESP.json');
+var dataJson = require('./data/2020-09-11_2020-09-11_ESP.json');
 //939
 const App = () => {
   const [processedJsonData, setData] = useState(null)
@@ -105,13 +105,16 @@ const App = () => {
     
     return (<>
     <SummaryHeader data = {processedData.header}></SummaryHeader>
+    <table id='summary'>
     <tr>
-        <td >
+        <td>
       <Donut data = {processedData.donutISN}></Donut>
-      </td><td>-----------------------------------</td><td>
+      </td><td>
       <Donut data = {processedData.donutNPS}></Donut>
       </td>
+      
     </tr>
+    </table>
     <Table data = {processedData.table}></Table>
     <p>pencil</p>
     </>)

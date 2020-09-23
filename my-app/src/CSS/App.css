@@ -44,11 +44,29 @@ table {
   color:white
 }
 
-#summary td, th {
-  border: 1px solid #4e9bff;
+#summary td,#summary th {
+  border: 1px solid #000000;
   text-align: center;
   padding: 8px;
 }
 #summary tr {
   background-color: #4e9bff;
 }
+
+#donut table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color:white
+}
+#donut tr {
+  background-color: #4e9bff;
+}
+#donut td {
+  width: 100%;
+  border: 1px solid #000000;
+  text-align: right;
+  padding: 0px;
+}
+
+

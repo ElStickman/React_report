@@ -4,8 +4,19 @@ import '../Css/App.css'
 
 
 function Table({ data }) {
-
+    data.pregunta.forEach( function(pregunta, indice, array) {
+        
+        data.pregunta[indice] = data.pregunta[indice].replace(/\./gi, " ");
+        data.pregunta[indice] = data.pregunta[indice].replace("De acuerdo a tu experiencia", "De acuerdo a tu experiencia, ¿");
+        data.pregunta[indice] = data.pregunta[indice].replace("X ", "¿");
+        data.pregunta[indice] = data.pregunta[indice].replace("X", "¿");
+        data.pregunta[indice] = data.pregunta[indice].concat("?")
+        data.pregunta[indice] = data.pregunta[indice].replace(" ?", "?");
+        data.pregunta[indice] = data.pregunta[indice].replace(" ¿", "¿");
+        //console.log(data.pregunta[indice]);
+    });
     return (
+        
 
         <div className='table-responsive'>
             <p>En una escala de 1 a 7, donde 1 es "Muy Insatisfecho" y 7 es "Muy Satisfecho"</p>

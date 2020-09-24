@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Css/index.css';
-import App from './Components/App';
+import ESPReport from './Components/ESPReport';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ESPReport />
   </React.StrictMode>,
   document.getElementById('root')
 );

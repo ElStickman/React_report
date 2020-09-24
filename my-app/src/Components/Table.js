@@ -11,6 +11,7 @@ function Table({ data }) {
         data.pregunta[indice] = data.pregunta[indice].replace("X ", "¿");
         data.pregunta[indice] = data.pregunta[indice].replace("X", "¿");
         data.pregunta[indice] = data.pregunta[indice].concat("?")
+        data.pregunta[indice] = data.pregunta[indice].replace(" ?", "?");
         //console.log(data.pregunta[indice]);
     });
     return (

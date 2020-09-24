@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../Css/FacultyReport.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookReader } from '@fortawesome/free-solid-svg-icons';
+import { faBookReader, faUserGraduate, faCheckSquare, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
 var data = [{id:1, facultyName:'Nombre de Facultad', startDate:'2020-01-01'}]
 
@@ -42,8 +42,16 @@ function FacultyReport() {
                                 {data.startDate}
                             </td>
                             <td>
-                                <i class="fas fa-book-reader"></i>
                                 <FontAwesomeIcon icon={faBookReader}></FontAwesomeIcon>
+                            </td>
+                            <td>
+                                <FontAwesomeIcon icon={faUserGraduate}></FontAwesomeIcon>
+                            </td>
+                            <td>
+                                <FontAwesomeIcon icon= {faCheckSquare}></FontAwesomeIcon>
+                            </td>
+                            <td>
+                            <FontAwesomeIcon icon= {faMobileAlt}></FontAwesomeIcon>
                             </td>
                         </tr>
                     )})

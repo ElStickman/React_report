@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../Css/App.css';
+import ComentariosGenerales from './ComentariosGenerales.js';
 import Donut from './Donut.js';
 import SummaryHeader from './SummaryHeader.js';
 import Table from './Table.js'
 
 var dataJson = require('../data/2020-09-11_2020-09-11_ESP.json');
 //939
-const App = () => {
+const ESPReport = () => {
   const [processedJsonData, setData] = useState(null)
   useEffect(() => {
     let processedJsonData_1 = []
@@ -69,17 +70,61 @@ const App = () => {
         var promotores = dates[date].promotores
         var detractores = dates[date].detractores
         var promedioObject = dates[date].avgPorPregunta[0]
-
+        
         var promedios = []
         for (const pregunta in promedioObject) {
           promedios.push(promedioObject[pregunta])
         }
-        var tableData = { pregunta: preguntas, promedio: promedios, detractores: detractores, neutros: [], promotores: promotores, isns: isns }
+        
+        var preguntaNivelExigencia = dates[date].valoresTexto['X.Cómo.evalúas.el.nivel.de.exigencia.en.el.programa.']
+        var respuestasNivelExigencia = []
+        preguntaNivelExigencia.forEach(respuestaNivelExigencia => {
+          respuestasNivelExigencia.push(respuestaNivelExigencia)
+        })
+
+        var preguntaRelevancia = dates[date].valoresTexto['Cuéntanos...Qué.fue.lo.más.relevante.para.ti.durante.el.desarrollo.del.programa.']
+        var respuestasRelevancia = []
+        preguntaRelevancia.forEach(respuestaRelevancia => {
+          respuestasRelevancia.push(respuestaRelevancia)
+        })
+          
+        var preguntaSugerencia = dates[date].valoresTexto['Déjanos.tus.comentarios.y.o.sugerencias']
+        var respuestasSugerencia = []
+        preguntaSugerencia.forEach(respuestaSugerencia => {
+          respuestasSugerencia.push(respuestaSugerencia)
+        })
+         
+        var respuestasComentarios = { exigencia: respuestasNivelExigencia,
+                                      relevancia: respuestasRelevancia,
+                                      sugerencia: respuestasSugerencia
+                                    }
+
+        var tableData = { pregunta: preguntas,
+                          promedio: promedios, 
+                          detractores: detractores, 
+                          neutros: [], 
+                          promotores: promotores, 
+                          isns: isns 
+                        }
+
         var ratio = Math.round(dates[date]['tasaRespuesta'] * 100) + '%'
         var answers = dates[date]['respuestas']
 
-        var headerData = { facultyName: dates[date].facultad[0], cohortName: dates[date].nombre[0], surveyDate: date, totalStudents: dates[date].matriculados[0], totalRespondents: answers, ratioStudentsRespondents: ratio }
-        processedJsonData_1.push({ id: record, donutNPS: donutDataNPS, donutISN: donutDataISN, header: headerData, table: tableData })
+        var headerData = {facultyName: dates[date].facultad[0],
+                          cohortName: dates[date].nombre[0], surveyDate: date, 
+                          totalStudents: dates[date].matriculados[0], 
+                          totalRespondents: answers, 
+                          ratioStudentsRespondents: ratio
+                         }
+
+        processedJsonData_1.push({id: record,
+                                  donutNPS: donutDataNPS, 
+                                  donutISN: donutDataISN, 
+                                  header: headerData, 
+                                  table: tableData, 
+                                  comentarios: respuestasComentarios
+                                  }
+                                )
         break;
       }
     }
@@ -108,18 +153,18 @@ const App = () => {
     <table id='summary'>
 
     <tr>
-    <div id="donutid">
-      <Donut data = {processedData.donutISN}></Donut>
-    </div>
-    <div id="donutid">
-      <Donut data = {processedData.donutNPS}></Donut>
-    </div>
+      <td>
+        <Donut data = {processedData.donutISN}></Donut>
+      </td><td>
+        <Donut data = {processedData.donutNPS}></Donut>
+      </td>
       
     </tr>
 
     </table>
     <Table data = {processedData.table}></Table>
     <p>pencil</p>
+    <ComentariosGenerales data = {processedData.comentarios}></ComentariosGenerales>
     </>)
     
     })}
@@ -128,4 +173,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default ESPReport;

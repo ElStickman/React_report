@@ -5,7 +5,7 @@ import SummaryHeader from './SummaryHeader.js';
 import Table from './Table.js'
 
 var dataJson = require('../data/2020-09-11_2020-09-11_ESP.json');
-//939
+//1418
 const App = () => {
   const [processedJsonData, setData] = useState(null)
   useEffect(() => {
@@ -95,35 +95,29 @@ const App = () => {
 
   return (
     <div className="App">
-      {processedJsonData.filter((data) => {
-
-        return (
-          data.id === "939"
-        )
-
-  }).map((processedData)=>{
-    
-    return (<>
-    <SummaryHeader data = {processedData.header}></SummaryHeader>
-    <table id='summary'>
-
-    <tr>
-    <div id="donutid">
-      <Donut data = {processedData.donutISN}></Donut>
-    </div>
-    <div id="donutid">
-      <Donut data = {processedData.donutNPS}></Donut>
-    </div>
-      
-    </tr>
-
-    </table>
-    <Table data = {processedData.table}></Table>
-    <p>pencil</p>
-    </>)
-    
-    })}
-
+      {processedJsonData
+        .filter((data) => {
+          return data.id === "1418";
+        })
+        .map((processedData) => {
+          return (
+            <>
+              <SummaryHeader data={processedData.header}></SummaryHeader>
+              <table id="summary">
+                <tr>
+                  <div id="donutid">
+                    <Donut data={processedData.donutISN}></Donut>
+                  </div>
+                  <div id="donutid">
+                    <Donut data={processedData.donutNPS}></Donut>
+                  </div>
+                </tr>
+              </table>
+              <Table data={processedData.table}></Table>
+              <p>pencil</p>
+            </>
+          );
+        })}
     </div>
   );
 }

@@ -16,6 +16,10 @@ p{
   font-weight: bold;
   padding: 50px 0 0 0;
 }
+.respuestaComentario{
+  font-weight: 100;
+  padding: 0%;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;

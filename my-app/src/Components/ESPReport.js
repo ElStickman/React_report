@@ -101,28 +101,28 @@ const App = () => {
           data.id === "939"
         )
 
-  }).map((processedData)=>{
-    
-    return (<>
-    <SummaryHeader data = {processedData.header}></SummaryHeader>
-    <table id='summary'>
+      }).map((processedData) => {
 
-    <tr>
-    <div id="donutid">
-      <Donut data = {processedData.donutISN}></Donut>
-    </div>
-    <div id="donutid">
-      <Donut data = {processedData.donutNPS}></Donut>
-    </div>
-      
-    </tr>
+        return (<>
+          <SummaryHeader data={processedData.header}></SummaryHeader>
+          <table id='summary'>
 
-    </table>
-    <Table data = {processedData.table}></Table>
-    <p>pencil</p>
-    </>)
-    
-    })}
+            <tr>
+              <div id="donutid">
+                <Donut data={processedData.donutISN}></Donut>
+              </div>
+              <div id="donutid">
+                <Donut data={processedData.donutNPS}></Donut>
+              </div>
+
+            </tr>
+
+          </table>
+          <Table data={processedData.table}></Table>
+          <p>pencil</p>
+        </>)
+
+      })}
 
     </div>
   );

@@ -6,8 +6,10 @@ import SummaryHeader from './SummaryHeader.js';
 import Table from './Table.js'
 
 var dataJson = require('../data/2020-09-11_2020-09-11_ESP.json');
-//939
+
+//1418
 const ESPReport = () => {
+
   const [processedJsonData, setData] = useState(null)
   useEffect(() => {
     let processedJsonData_1 = []
@@ -140,6 +142,7 @@ const ESPReport = () => {
 
   return (
     <div className="App">
+<<<<<<< HEAD
       {processedJsonData.filter((data) => {
 
         return (
@@ -162,6 +165,27 @@ const ESPReport = () => {
     </tr>
 
     </table>
+=======
+
+{processedJsonData
+  .filter((data) => {
+    return data.id === "1418";
+  })
+  .map((processedData) => {
+    
+    return (<>
+    <SummaryHeader data = {processedData.header}></SummaryHeader>
+    <table id="summary">
+                <tr>
+                  <div id="donutid">
+                    <Donut data={processedData.donutISN}></Donut>
+                  </div>
+                  <div id="donutid">
+                    <Donut data={processedData.donutNPS}></Donut>
+                  </div>
+                </tr>
+              </table>
+>>>>>>> ab4c5884ecfbef77557e46a98fa6c2a44b7637cc
     <Table data = {processedData.table}></Table>
     <p>pencil</p>
     <ComentariosGenerales data = {processedData.comentarios}></ComentariosGenerales>
